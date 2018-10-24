@@ -7,8 +7,6 @@ configuration:
  - Release
 
 install:
- - ls
- - ls bgfx
  - cd bgfx && ..\bx\tools\bin\windows\genie --with-tools vs2015
 
 build:
