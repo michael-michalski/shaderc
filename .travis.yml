@@ -20,8 +20,8 @@ before_script:
   - git submodule update --remote
 
 script:
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then make build CXX="g++-5" CC="gcc-5"; fi
-  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then make build; fi  
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then cd bgfx && make build CXX="g++-5" CC="gcc-5"; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then cd bgfx && make build; fi  
 
 branches:
   only:
