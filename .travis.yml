@@ -1,0 +1,33 @@
+language: cpp
+matrix:
+  include:
+    - compiler: gcc
+      os: linux
+    - compiler: clang
+      os: osx
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-5
+    - g++-5
+    - clang
+
+before_script:
+  - git submodule init
+  - git submodule update --remote
+
+script:
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then make build CXX="g++-5" CC="gcc-5"; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then make build; fi  
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
+
+osx_image: xcode9.3
