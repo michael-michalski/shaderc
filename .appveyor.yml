@@ -1,0 +1,15 @@
+shallow_clone: true
+
+os:
+ - Visual Studio 2017
+
+configuration:
+ - Release
+
+install:
+ - git submodule init
+ - git submodule update --remote
+ - cd bgfx && ..\bx\tools\bin\windows\genie --with-tools vs2015
+
+build:
+  project: bgfx/.build/projects/$(TOOLSET)/bgfx.sln
