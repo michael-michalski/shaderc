@@ -10,4 +10,4 @@ install:
  - cd bgfx && ..\bx\tools\bin\windows\genie --with-tools vs2015
 
 build:
-  project: .build/projects/vs2015/bgfx.sln
+  project: bgfx/.build/projects/vs2015/bgfx.sln
