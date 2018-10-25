@@ -4,5 +4,9 @@ os:
 configuration:
  - Release
 
+install:
+ - dir
+ - git submodule init
+
 build_script:
   - cd bgfx && ..\bx\tools\bin\windows\genie --with-tools vs2015
